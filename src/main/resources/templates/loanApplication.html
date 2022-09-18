@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar"/>
+
+<tr><th>Services available are listed below. Select a service</th></tr>
+
+                <form action="http://localhost:8080/user/service" method="POST">
+    
+                    <button class="btn btn-primary btn-block" type="submit"><table>
+  <tr>
+    <th>User Details Service</th>
+  </tr>
+  <tr>
+    <td>This service provides option to view/create user details</td>
+  </tr>
+</table>
+                    </button>
+    </form>
+    
+    <tr>             </tr>
+                    <form action="http://localhost:8080/user/service" method="POST">
+    
+                    <button class="btn btn-primary btn-block" type="submit"><table>
+  <tr>
+    <th>Loan Details Service</th>
+  </tr>
+  <tr>
+    <td>This service provides option to view existing loans/request for a new loan</td>
+  </tr>
+</table>
+                    </button>    </form>
+        <tr>             </tr>
+    
+                    <form action="http://localhost:8080/user/service" method="POST">
+    
+                    <button class="btn btn-primary btn-block" type="submit"><table>
+  <tr>
+    <th>Account Details Service</th>
+  </tr>
+  <tr>
+    <td>This service provides option to view/create customer details</td>
+  </tr>
+</table>
+                    </button>
+    </form>
+    
+                        <form action="http://localhost:8080/user/service" method="POST">
+    
+                    <button class="btn btn-primary btn-block" type="submit"><table>
+  <tr>
+    <th>Other Services</th>
+  </tr>
+  <tr>
+    <td>Other such list of services available for appointment</td>
+  </tr>
+</table>
+                    </button>
+    </form>
+    <div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+</html>

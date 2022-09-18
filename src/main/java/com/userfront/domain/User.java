@@ -40,16 +40,7 @@ public class User implements UserDetails{
 
     private boolean enabled=true;
 
-    @OneToOne
-    private PrimaryAccount primaryAccount;
-
-    @OneToOne
-    private SavingsAccount savingsAccount;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Appointment> appointmentList;
-
+   
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Recipient> recipientList;
 
@@ -113,13 +104,7 @@ public class User implements UserDetails{
         this.phone = phone;
     }
 
-    public List<Appointment> getAppointmentList() {
-        return appointmentList;
-    }
 
-    public void setAppointmentList(List<Appointment> appointmentList) {
-        this.appointmentList = appointmentList;
-    }
 
     public List<Recipient> getRecipientList() {
         return recipientList;
@@ -137,22 +122,6 @@ public class User implements UserDetails{
         this.password = password;
     }
 
-    public PrimaryAccount getPrimaryAccount() {
-        return primaryAccount;
-    }
-
-    public void setPrimaryAccount(PrimaryAccount primaryAccount) {
-        this.primaryAccount = primaryAccount;
-    }
-
-    public SavingsAccount getSavingsAccount() {
-        return savingsAccount;
-    }
-
-    public void setSavingsAccount(SavingsAccount savingsAccount) {
-        this.savingsAccount = savingsAccount;
-    }
-
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
@@ -167,7 +136,6 @@ public class User implements UserDetails{
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", appointmentList=" + appointmentList +
                 ", recipientList=" + recipientList +
                 ", userRoles=" + userRoles +
                 '}';
